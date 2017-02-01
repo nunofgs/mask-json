@@ -34,7 +34,7 @@
     "test": "NODE_ENV=test mocha $npm_package_options_mocha"
   },
   "dependencies": {
-    "lodash": "^3.1.0"
+    "lodash": "^4.17.4"
   },
   "devDependencies": {
     "babel-cli": "^6.1.1",
