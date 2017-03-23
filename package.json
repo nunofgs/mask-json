@@ -22,12 +22,9 @@
     "url": "https://github.com/seegno/mask-json/issues"
   },
   "license": "SEE LICENSE IN LICENSE",
-  "options": {
-    "changelog": "-o seegno -r mask-json --only-pulls --use-commit-body --title 'Changelog' --date-format '/ YYYY-MM-DD'"
-  },
   "scripts": {
     "build": "rm -rf dist/* && babel src/ --out-dir dist/",
-    "changelog": "github-changes $npm_package_options_changelog",
+    "changelog": "github-changelog-generator --future-release=$npm_package_version --owner=seegno --repo=mask-json > CHANGELOG.md",
     "lint": "eslint src test",
     "test": "NODE_ENV=test mocha test"
   },
@@ -35,9 +32,9 @@
     "lodash": "^4.17.4"
   },
   "devDependencies": {
+    "@uphold/github-changelog-generator": "^0.4.1",
     "eslint": "^3.18.0",
     "eslint-config-seegno": "^9.0.0",
-    "github-changes": "^1.0.0",
     "mocha": "^2.0.1",
     "pre-commit": "^1.0.10",
     "should": "^7.1.1"
