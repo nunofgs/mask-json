@@ -3,26 +3,26 @@
  * Module dependencies.
  */
 
-const _ = require('lodash');
+const { assign, cloneDeepWith, includes, isObject } = require('lodash');
 
 /**
  * Export `maskJson` function.
  */
 
 module.exports = function maskJson(collection, options) {
-  options = _.assign({
+  options = assign({
     replacement: '--REDACTED--'
   }, options);
 
   return function(values) {
-    return _.cloneDeep(values, (value, key) => {
+    return cloneDeepWith(values, (value, key) => {
       // Strip matching keys.
-      if (_.contains(collection, key)) {
+      if (includes(collection, key)) {
         return options.replacement;
       }
 
       // Allow cloneDeep to recurse into nested objects.
-      if (_.isObject(value)) {
+      if (isObject(value)) {
         return;
       }
 
