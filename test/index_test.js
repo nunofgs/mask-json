@@ -10,6 +10,24 @@ const maskJson = require('../index');
  */
 
 describe('maskJson()', () => {
+  it('should accept a custom `ignoreCase`', () => {
+    const object = {
+      foo: {
+        PaSSWorD: 'barbiz',
+        password: 'foobar',
+        secret: 'bizbaz'
+      }
+    };
+
+    maskJson(['password', 'secret'], { ignoreCase: true })(object).should.eql({
+      foo: {
+        PaSSWorD: '--REDACTED--',
+        password: '--REDACTED--',
+        secret: '--REDACTED--'
+      }
+    });
+  });
+
   it('should accept a custom `replacement`', () => {
     const object = {
       foo: {
