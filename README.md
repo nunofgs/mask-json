@@ -47,6 +47,12 @@ maskJson({ foo: 'bar', biz: { username: 'myusername', password: 'mypassword' } }
 $ npm test
 ```
 
+## Release
+
+```sh
+npm version [<new version> | major | minor | patch] -m "Release %s"
+```
+
 ## License
 
 MIT
