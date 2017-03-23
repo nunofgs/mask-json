@@ -16,14 +16,14 @@ export default function maskJson(collection, options) {
 
   return function(values) {
     return _.cloneDeep(values, (value, key) => {
-      // Allow cloneDeep to recurse into nested objects.
-      if (_.isObject(value)) {
-        return;
-      }
-
       // Strip matching keys.
       if (_.contains(collection, key)) {
         return options.replacement;
+      }
+
+      // Allow cloneDeep to recurse into nested objects.
+      if (_.isObject(value)) {
+        return;
       }
 
       // Otherwise, return the value.
