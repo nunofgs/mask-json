@@ -23,7 +23,6 @@
   },
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
-    "build": "rm -rf dist/* && babel src/ --out-dir dist/",
     "changelog": "github-changelog-generator --future-release=$npm_package_version --owner=seegno --repo=mask-json > CHANGELOG.md",
     "lint": "eslint src test",
     "test": "NODE_ENV=test mocha test"
