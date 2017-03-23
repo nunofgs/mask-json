@@ -3,13 +3,13 @@
  * Module dependencies.
  */
 
-import _ from 'lodash';
+const _ = require('lodash');
 
 /**
  * Export `maskJson` function.
  */
 
-export default function maskJson(collection, options) {
+module.exports = function maskJson(collection, options) {
   options = _.assign({
     replacement: '--REDACTED--'
   }, options);
