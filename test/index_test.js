@@ -3,7 +3,7 @@
  * Module dependencies.
  */
 
-import maskJson from '../src/index';
+const maskJson = require('../index');
 
 /**
  * Test `maskJson`.
