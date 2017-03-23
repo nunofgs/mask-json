@@ -33,7 +33,7 @@ _(Function)_: Returns a function that will redact values from a given object.
 ### Example
 
 ```javascript
-var blacklist = ['password', 'secret'];
+var blacklist = ['password', 'username'];
 var maskJson = require('mask-json')(blacklist);
 
 maskJson({ foo: 'bar', biz: { username: 'myusername', password: 'mypassword' } });
