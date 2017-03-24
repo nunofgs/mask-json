@@ -3,7 +3,7 @@
  * Module dependencies.
  */
 
-const { cloneDeepWith, isObject, some } = require('lodash');
+const { cloneDeepWith, isObject, toLower, some } = require('lodash');
 
 /**
  * Export `maskJson` function.
@@ -15,13 +15,8 @@ module.exports = function maskJson(collection, {
 } = {}) {
   return function(values) {
     return cloneDeepWith(values, (value, key) => {
-      // The top-most object has no key.
-      if (!key) {
-        return;
-      }
-
       // Strip matching keys.
-      if (some(collection, (item) => ignoreCase ? key.toLowerCase() === item.toLowerCase() : key === item)) {
+      if (some(collection, item => ignoreCase ? toLower(key) === toLower(item) : key === item)) {
         return replacement;
       }
 
@@ -34,4 +29,4 @@ module.exports = function maskJson(collection, {
       return value;
     });
   };
-}
+};
