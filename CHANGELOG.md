@@ -1,6 +1,7 @@
 # Changelog
 
-## [1.0.1](https://github.com/nunofgs/mask-json/releases/tag/1.0.1) (2017-03-24)
+## [1.0.2](https://github.com/nunofgs/mask-json/releases/tag/1.0.2) (2017-07-18)
+- Update ownership [\#9](https://github.com/nunofgs/mask-json/pull/9) ([nunofgs](https://github.com/nunofgs))
 - Fix lower case key matching for arrays [\#8](https://github.com/nunofgs/mask-json/pull/8) ([nunofgs](https://github.com/nunofgs))
 - Fix typo in README.md [\#7](https://github.com/nunofgs/mask-json/pull/7) ([nunofgs](https://github.com/nunofgs))
 - Add GitHub changelog generator [\#6](https://github.com/nunofgs/mask-json/pull/6) ([nunofgs](https://github.com/nunofgs))
