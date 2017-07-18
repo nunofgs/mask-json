@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/seegno/mask-json.git"
+    "url": "https://github.com/nunofgs/mask-json.git"
   },
   "description": "Redacts values in objects.",
   "keywords": [
@@ -14,16 +14,15 @@
   ],
   "author": {
     "name": "Nuno Sousa",
-    "email": "nfs@seegno.com",
-    "url": "https://seegno.com"
+    "email": "nunofgs@gmail.com"
   },
-  "homepage": "https://github.com/seegno/mask-json",
+  "homepage": "https://github.com/nunofgs/mask-json",
   "bugs": {
-    "url": "https://github.com/seegno/mask-json/issues"
+    "url": "https://github.com/nunofgs/mask-json/issues"
   },
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
-    "changelog": "github-changelog-generator --future-release=$npm_package_version --owner=seegno --repo=mask-json > CHANGELOG.md",
+    "changelog": "github-changelog-generator --future-release=$npm_package_version --owner=nunofgs --repo=mask-json > CHANGELOG.md",
     "lint": "eslint *.js test",
     "test": "NODE_ENV=test mocha test",
     "version": "npm run changelog --future-release=$npm_package_version && git add -A CHANGELOG.md"
