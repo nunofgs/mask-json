@@ -3,7 +3,7 @@
  * Module dependencies.
  */
 
-const maskJson = require('../index');
+const maskJson = require('src/index');
 
 /**
  * Test `maskJson`.
@@ -20,7 +20,7 @@ describe('maskJson()', () => {
       }
     };
 
-    maskJson(['password', 'secret'], { ignoreCase: true })(object).should.eql({
+    expect(maskJson(['password', 'secret'], { ignoreCase: true })(object)).toEqual({
       bar: ['biz', 'baz'],
       foo: {
         PaSSWorD: '--REDACTED--',
@@ -38,7 +38,7 @@ describe('maskJson()', () => {
       }
     };
 
-    maskJson(['password', 'secret'], { replacement: '*****' })(object).should.eql({
+    expect(maskJson(['password', 'secret'], { replacement: '*****' })(object)).toEqual({
       foo: {
         password: '*****',
         secret: '*****'
@@ -56,7 +56,7 @@ describe('maskJson()', () => {
       }
     };
 
-    maskJson(['expiration'])(object).should.eql({
+    expect(maskJson(['expiration'])(object)).toEqual({
       bar: {
         biz: 'baz'
       },
@@ -77,7 +77,7 @@ describe('maskJson()', () => {
       }
     };
 
-    maskJson(['password', 'secret'])(object).should.eql({
+    expect(maskJson(['password', 'secret'])(object)).toEqual({
       bar: {
         biz: 'baz'
       },
