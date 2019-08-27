@@ -1,5 +1,8 @@
 # Changelog
 
+## [v1.0.3](https://github.com/nunofgs/mask-json/releases/tag/v1.0.3) (2019-08-27)
+- Update to modern standards [\#10](https://github.com/nunofgs/mask-json/pull/10) ([nunofgs](https://github.com/nunofgs))
+
 ## [1.0.2](https://github.com/nunofgs/mask-json/releases/tag/v1.0.2) (2017-07-18)
 - Update ownership [\#9](https://github.com/nunofgs/mask-json/pull/9) ([nunofgs](https://github.com/nunofgs))
 
