@@ -4,7 +4,7 @@ Redacts values in objects. Useful when sending data to external logging services
 
 ## Status
 
-[![npm version][npm-image]][downloads-url] [![npm downloads][downloads-image]][downloads-url] [![build status][travis-image]][travis-url]
+[![npm version][npm-image]][downloads-url] [![npm downloads][downloads-image]][downloads-url] [![build status][workflow-image]][workflow-url]
 
 ## Installation
 
@@ -61,5 +61,5 @@ MIT
 [downloads-url]: https://npmjs.org/package/mask-json
 [npm-image]: https://img.shields.io/npm/v/mask-json.svg
 [npm-url]: https://npmjs.org/package/mask-json
-[travis-image]: https://img.shields.io/travis/nunofgs/mask-json.svg
-[travis-url]: https://travis-ci.org/nunofgs/mask-json
+[workflow-image]: https://github.com/nunofgs/mask-json/workflows/Node%20CI/badge.svg
+[workflow-url]: https://github.com/nunofgs/mask-json/actions
