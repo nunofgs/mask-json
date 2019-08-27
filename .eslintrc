@@ -1,3 +1,4 @@
-extends: seegno
+extends: uphold
+
 rules:
-  no-confusing-arrow: 0
+  prettier/prettier: 0
