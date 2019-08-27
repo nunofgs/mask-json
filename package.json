@@ -23,16 +23,16 @@
   "license": "SEE LICENSE IN LICENSE",
   "main": "./src/index.js",
   "scripts": {
-    "changelog": "github-changelog-generator --future-release=$npm_package_version --owner=nunofgs --repo=mask-json > CHANGELOG.md",
+    "changelog": "github-changelog-generator --owner=nunofgs --repo=mask-json --future-release=v$npm_package_version > CHANGELOG.md",
     "lint": "eslint .",
     "test": "jest",
-    "version": "npm run changelog --future-release=$npm_package_version && git add -A CHANGELOG.md"
+    "version": "npm run changelog && git add -A CHANGELOG.md"
   },
   "dependencies": {
     "lodash": "^4.17.4"
   },
   "devDependencies": {
-    "@uphold/github-changelog-generator": "^0.4.1",
+    "@uphold/github-changelog-generator": "^0.8.1",
     "eslint": "^6.2.2",
     "eslint-config-uphold": "^1.0.0",
     "husky": "^3.0.4",
