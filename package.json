@@ -29,7 +29,7 @@
     "version": "npm run changelog && git add -A CHANGELOG.md"
   },
   "dependencies": {
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@uphold/github-changelog-generator": "^0.8.1",
