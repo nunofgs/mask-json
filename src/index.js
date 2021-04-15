@@ -17,7 +17,7 @@ module.exports = function maskJson(collection, {
     return cloneDeepWith(values, (value, key) => {
       // Strip matching keys.
       if (some(collection, item => ignoreCase ? toLower(key) === toLower(item) : key === item)) {
-        return replacement;
+        return (typeof replacement === 'function') ? replacement(value) : replacement;
       }
 
       // Allow cloneDeep to recurse into nested objects.

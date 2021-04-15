@@ -24,7 +24,7 @@ $ npm install mask-json
 Option        | Default value  | Description
 ------------- | -------------- | -----------------------------------------------------
 _ignoreCase_  | false          | Whether to ignore case sensitivity when matching keys
-_replacement_ | _--REDACTED--_ | The default value to replace
+_replacement_ | _--REDACTED--_ | The default value to replace, this can be either an explicit value or a function using current value as only parameter
 
 ### Returns
 
@@ -41,15 +41,31 @@ maskJson({ foo: 'bar', biz: { username: 'myusername', password: 'mypassword' } }
 // => { foo: 'bar', biz: { username: '--REDACTED--', password: '--REDACTED--' } }
 ```
 
-## Tests
+Works the same when "replacement" is not a static string, but a function to convert 
+the original value somehow, e.g. mask some parts of a credit card number or phone number
+like the original "1234-5678-9012" shall become "1234-****-9012".
+
+The replacement function is called with one parameter - the original value to replace.
 
 ```javascript
+// with replacement function
+var replaceFunc = function(value) { return value.toUpperCase() }; 
+var maskJson2 = require('mask-json')(blacklist, {replacement: replaceFunc});
+
+maskJson2({ foo: 'bar', biz: { username: 'myusername', password: 'mypassword' } });
+
+// => { foo: 'bar', biz: { username: 'MYUSERNAME', password: 'MYPASSWORD' } }
+```
+
+## Tests
+
+```shell script
 $ npm test
 ```
 
 ## Release
 
-```sh
+```shell script
 npm version [<new version> | major | minor | patch] -m "Release %s"
 ```
 

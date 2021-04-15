@@ -30,7 +30,7 @@ describe('maskJson()', () => {
     });
   });
 
-  it('should accept a custom `replacement`', () => {
+  it('should accept a custom `replacement` value', () => {
     const object = {
       foo: {
         password: 'foobar',
@@ -42,6 +42,26 @@ describe('maskJson()', () => {
       foo: {
         password: '*****',
         secret: '*****'
+      }
+    });
+  });
+
+  it('should accept a custom `replacement` function', () => {
+    const object = {
+      foo: {
+        password: 'foobar',
+        secret: 'bizbaz'
+      }
+    };
+
+    function replacementFunc(value) {
+      return value.toUpperCase();
+    }
+
+    expect(maskJson(['password', 'secret'], { replacement: replacementFunc })(object)).toEqual({
+      foo: {
+        password: 'FOOBAR',
+        secret: 'BIZBAZ'
       }
     });
   });
